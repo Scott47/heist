@@ -5,11 +5,8 @@ namespace Heist
 {
     class Program
     {
+        public static List<IRobber> rolodex = new List<IRobber>();
         static void Main(string[] args)
-        {
-            AddCrewMember();
-        }
-        public static void AddCrewMember()
         {
             Bank regionsOnGallatin = new Bank();
             Hacker cassie = new Hacker("Cassie", 100, 20);
@@ -18,11 +15,17 @@ namespace Heist
             LockSpecialist jasmin = new LockSpecialist("Jasmin", 100, 25);
             Muscle erica = new Muscle("Erica", 100, 10);
             Muscle andres = new Muscle("Andres", 100, 10);
+            rolodex.Add(cassie);
+            rolodex.Add(myriam);
+            rolodex.Add(mario);
+            rolodex.Add(jasmin);
+            rolodex.Add(erica);
+            rolodex.Add(andres);
+            AddCrewMember();
+        }
+        public static void AddCrewMember()
+        {
 
-            List<IRobber> rolodex = new List<IRobber>()
-            {
-                cassie, myriam, mario, jasmin, erica, andres
-            };
             Console.WriteLine("Welcome to Heist! Let's build a crew and clock some dough.");
             Console.WriteLine("----------------------------------------------------------");
             Console.WriteLine("Here is a list of our current crew:");
@@ -39,12 +42,6 @@ namespace Heist
             int skillLevel = int.Parse(Console.ReadLine());
             Console.WriteLine($"What is {crewmember}'s cut?");
             int percentageCut = int.Parse(Console.ReadLine());
-            Console.WriteLine("Is there any one else you'd like to add to this crew? Y/N?");
-            string addAnotherCrewMember = Console.ReadLine().ToLower();
-            if (addAnotherCrewMember == "y")
-            {
-                AddCrewMember();
-            };
             if (newMemberSpecialty == "1")
             {
                 Hacker newCrewMember = new Hacker(crewmember, skillLevel, percentageCut);
@@ -60,6 +57,12 @@ namespace Heist
                 Muscle newCrewMember = new Muscle(crewmember, skillLevel, percentageCut);
                 rolodex.Add(newCrewMember);
             }
+            Console.WriteLine("Is there any one else you'd like to add to this crew? Y/N?");
+            string addAnotherCrewMember = Console.ReadLine().ToLower();
+            if (addAnotherCrewMember == "y")
+            {
+                AddCrewMember();
+            };
 
         }
     }
