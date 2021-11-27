@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Heist
 {
@@ -6,7 +7,15 @@ namespace Heist
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Bank regionsOnGallatin = new Bank();
+            Hacker rob = new Hacker();
+            LockSpecialist janet = new LockSpecialist();
+            Muscle janine = new Muscle();
+
+            List<IRobber> rolodex = new List<IRobber>()
+            {
+                rob, janet, janine
+            };
         }
     }
 }
