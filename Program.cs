@@ -13,11 +13,11 @@ namespace Heist
         {
             Bank regionsOnGallatin = new Bank();
             Hacker cassie = new Hacker("Cassie", 100, 20);
-            Hacker myriam = new Hacker();
-            LockSpecialist mario = new LockSpecialist();
-            LockSpecialist jasmin = new LockSpecialist();
-            Muscle erica = new Muscle();
-            Muscle andres = new Muscle();
+            Hacker myriam = new Hacker("Myriam", 100, 20);
+            LockSpecialist mario = new LockSpecialist("Mario", 100, 15);
+            LockSpecialist jasmin = new LockSpecialist("Jasmin", 100, 25);
+            Muscle erica = new Muscle("Erica", 100, 10);
+            Muscle andres = new Muscle("Andres", 100, 10);
 
             List<IRobber> rolodex = new List<IRobber>()
             {
@@ -47,32 +47,17 @@ namespace Heist
             };
             if (newMemberSpecialty == "1")
             {
-                Hacker newCrewMember = new Hacker()
-                {
-                    Name = crewmember,
-                    SkillLevel = skillLevel,
-                    PercentageCut = percentageCut
-                };
+                Hacker newCrewMember = new Hacker(crewmember, skillLevel, percentageCut);
                 rolodex.Add(newCrewMember);
             }
             if (newMemberSpecialty == "2")
             {
-                LockSpecialist newCrewMember = new LockSpecialist()
-                {
-                    Name = crewmember,
-                    SkillLevel = skillLevel,
-                    PercentageCut = percentageCut
-                };
+                LockSpecialist newCrewMember = new LockSpecialist(crewmember, skillLevel, percentageCut);
                 rolodex.Add(newCrewMember);
             }
             if (newMemberSpecialty == "3")
             {
-                Muscle newCrewMember = new Muscle()
-                {
-                    Name = crewmember,
-                    SkillLevel = skillLevel,
-                    PercentageCut = percentageCut
-                };
+                Muscle newCrewMember = new Muscle(crewmember, skillLevel, percentageCut);
                 rolodex.Add(newCrewMember);
             }
 

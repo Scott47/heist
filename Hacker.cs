@@ -7,11 +7,11 @@ namespace Heist
         public string Name { get; set; }
         public int SkillLevel { get; set; }
         public int PercentageCut { get; set; }
-        public Hacker()
+        public Hacker(string name, int skillLevel, int percentageCut)
         {
-            Name = Name;
-            SkillLevel = SkillLevel;
-            PercentageCut = PercentageCut;
+            Name = name;
+            SkillLevel = skillLevel;
+            PercentageCut = percentageCut;
         }
         public void PerformSkill(Bank bank)
         {
